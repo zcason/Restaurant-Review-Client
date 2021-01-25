@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from '../../components/Header/Header';
 
 
 class UpdatePage extends Component {
@@ -6,6 +7,7 @@ class UpdatePage extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <p>UpdatePage</p>
             </div>
         );

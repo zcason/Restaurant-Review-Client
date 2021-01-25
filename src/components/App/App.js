@@ -9,23 +9,26 @@ class App extends Component {
   state = {}
   render() {
     return (
-      <div>
-        <Switch>
-          <Route
-            exact
-            path={'/'}
-            component={HomePage}
-          />
-          <Route
-            path={'/restaurants/:id'}
-            component={DetailPage}
-          />
-          <Route
-            path={'/restaurants/:id/update'}
-            component={UpdatePage}
-          />
-        </Switch>
-      </div>
+      <main>
+        <div>
+          <Switch>
+            <Route
+              exact
+              path={'/'}
+              component={HomePage}
+            />
+            <Route
+              exact
+              path={'/restaurants/:id'}
+              component={DetailPage}
+            />
+            <Route
+              path={'/restaurants/:id/update'}
+              component={UpdatePage}
+            />
+          </Switch>
+        </div>
+      </main>
     );
   }
 }
