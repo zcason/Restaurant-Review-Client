@@ -1,0 +1,65 @@
+body {
+    padding:1.5em;
+    background: #f5f5f5
+  }
+  
+  table {
+    border: 0px;
+    font-size: .9em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  th {
+    text-align: left;
+  }
+    
+  thead {
+    font-weight: bold;
+    color: #fff;
+    background: blue;
+  }
+    
+   td, th {
+    padding: 1em .5em;
+    vertical-align: middle;
+  }
+    
+   td {
+    border-bottom: 1px solid grey;
+    color: white;
+    background:#303030;
+  }
+  
+  .update {
+      background-color: #F5ED0A;
+      font-weight: 600;
+      border-style: none;
+      border-radius: 5px;
+      height: 30px;
+      width: 60px;
+  }
+
+  .delete {
+      background-color: #F00000;
+      font-weight: 600;
+      border-style: none;
+      border-radius: 5px;
+      height: 30px;
+      width: 60px;
+  }
+    
+    @media all and (max-width: 599px) {
+        table {
+          display: inline;
+          position: relative; 
+          padding-bottom: 0;
+          border: none;
+          box-shadow: 0 0 10px rgba(0,0,0,.2);
+          width: 100%;
+          overflow-x: scroll;
+        }
+    }
