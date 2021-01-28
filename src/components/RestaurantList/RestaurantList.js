@@ -10,12 +10,20 @@ class RestaurantList extends Component {
         },
     }
 
-    handleDelete = (id) => {
+    handleDelete = (event, id) => {
+        event.stopPropagation();
         RestaurantReviewApiService.deleteRestaurantById(id)
         this.props.delete(id)
     }
 
-    handleSelectRestaurant = (id) => {
+    handleUpdate = (event, id) => {
+        event.stopPropagation();
+        const { history } = this.props;
+        history.push(`/restaurants/${id}/update`)
+    }
+
+    handleSelectRestaurant = (event, id) => {
+        event.stopPropagation();
         const { history } = this.props;
         history.push(`/restaurants/${id}`)
     }
@@ -39,25 +47,25 @@ class RestaurantList extends Component {
                         return <tr
                             className={"restaurant-tab"}
                             key={restaurant.id}
-                            onClick={() => this.handleSelectRestaurant(restaurant.id)}
+                            onClick={(event) => this.handleSelectRestaurant(event, restaurant.id)}
                         >
                             <td>{restaurant.name}</td>
                             <td>{restaurant.location}</td>
                             <td>{"$".repeat(restaurant.price_range)}</td>
                             <td>5</td>
                             <td>
-                                <Link to={`/restaurants/${restaurant.id}/update`}>
-                                    <button
-                                        className="update"
-                                    >
-                                        Update
+                                <button
+                                    className="update"
+                                    onClick={(event) => this.handleUpdate(event, restaurant.id)}
+
+                                >
+                                    Update
                                 </button>
-                                </Link>
                             </td>
                             <td>
                                 <button
                                     className="delete"
-                                    onClick={() => this.handleDelete(restaurant.id)}
+                                    onClick={(event) => this.handleDelete(event, restaurant.id)}
                                 >
                                     Delete
                                     </button>
