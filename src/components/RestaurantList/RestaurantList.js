@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import RestaurantReviewApiService from '../../services/restaurant-review-api-services';
 import './RestaurantList.css';
 
 class RestaurantList extends Component {
-    render() {
+    static defaultProps = {
+        history: {
+            push: () => { },
+        },
+    }
 
+    handleDelete = (id) => {
+        RestaurantReviewApiService.deleteRestaurantById(id)
+        this.props.delete(id)
+    }
+
+    handleSelectRestaurant = (id) => {
+        const { history } = this.props;
+        history.push(`/restaurants/${id}`)
+    }
+
+    render() {
         return (
             <table>
                 <thead>
@@ -19,13 +36,32 @@ class RestaurantList extends Component {
                 </thead>
                 <tbody>
                     {this.props.restaurants.map(restaurant => {
-                        return <tr key={restaurant.id}>
+                        return <tr
+                            className={"restaurant-tab"}
+                            key={restaurant.id}
+                            onClick={() => this.handleSelectRestaurant(restaurant.id)}
+                        >
                             <td>{restaurant.name}</td>
                             <td>{restaurant.location}</td>
                             <td>{"$".repeat(restaurant.price_range)}</td>
                             <td>5</td>
-                            <td><button className="update">Update</button></td>
-                            <td><button className="delete">Delete</button></td>
+                            <td>
+                                <Link to={`/restaurants/${restaurant.id}/update`}>
+                                    <button
+                                        className="update"
+                                    >
+                                        Update
+                                </button>
+                                </Link>
+                            </td>
+                            <td>
+                                <button
+                                    className="delete"
+                                    onClick={() => this.handleDelete(restaurant.id)}
+                                >
+                                    Delete
+                                    </button>
+                            </td>
                         </tr>
                     })
                     }
@@ -35,4 +71,4 @@ class RestaurantList extends Component {
     }
 }
 
-export default RestaurantList;
+export default withRouter(RestaurantList);

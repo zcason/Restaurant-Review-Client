@@ -13,21 +13,34 @@ class HomePage extends Component {
     }
     componentDidMount() {
         RestaurantReviewApiService.getAllRestaurants()
-            .then(results => {
+            .then(res => {
                 this.setState({
-                    restaurants: results,
+                    restaurants: res,
                     isLoading: false
                 });
             })
     }
+
+    addRestaurantSetState = (apiResponse) => {
+        this.setState({ restaurants: [...this.state.restaurants, apiResponse] });
+    }
+
+    deleteRestaurant = (id) => {
+        this.setState({
+            restaurants: this.state.restaurants.filter(restaurant => {
+                return restaurant.id !== id
+            })
+        });
+    }
+
     render() {
         const { isLoading, restaurants } = this.state;
         return (
             <div>
                 <Header />
-                <AddRestaurant />
+                <AddRestaurant SetState={this.addRestaurantSetState} />
                 <span className={'res-list'}>
-                    {isLoading ? <p>Loading</p> : <RestaurantList restaurants={restaurants} />}
+                    {isLoading ? <p className={'loading'}>Loading</p> : <RestaurantList restaurants={restaurants} delete={this.deleteRestaurant} />}
                 </span>
             </div>
         );

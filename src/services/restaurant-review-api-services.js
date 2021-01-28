@@ -29,12 +29,13 @@ const RestaurantReviewApiService = {
             )
 
     },
-    updateRestaurantById(id) {
+    updateRestaurantById(id, restaurant) {
         return fetch(`${config.API_ENDPOINT}/api/restaurants/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
-            }
+            },
+            body: JSON.stringify(restaurant),
         })
             .then(res => (!res.ok)
                 ? res.json().then(e => Promise.reject(e))
@@ -47,7 +48,7 @@ const RestaurantReviewApiService = {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
-            }
+            },
         })
             .then(res => (!res.ok)
                 ? res.json().then(e => Promise.reject(e))

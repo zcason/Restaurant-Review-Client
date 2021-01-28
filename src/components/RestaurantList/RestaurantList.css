@@ -12,7 +12,7 @@ body {
     border-radius: 5px;
     overflow: hidden;
   }
-  
+
   th {
     text-align: left;
   }
@@ -27,11 +27,19 @@ body {
     padding: 1em .5em;
     vertical-align: middle;
   }
+
+  .restaurant-tab {
+    background:#303030;
+
+  }
+
+  .restaurant-tab:hover{
+    background:gray;
+  }
     
    td {
     border-bottom: 1px solid grey;
     color: white;
-    background:#303030;
   }
   
   .update {

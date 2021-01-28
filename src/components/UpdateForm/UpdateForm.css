@@ -1,0 +1,38 @@
+.update-header {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+.update-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    /* padding-left: 100px; */
+}
+
+.update-form label {
+    margin-left: 25%;
+}
+
+.update-form .form-control {
+    margin-top: 4px;
+    margin-bottom: 15px;
+    margin: 4px auto 15px auto;
+    height: 30px;
+    width: 50%;
+    border-radius: 8px;
+    border-width: thin;
+    padding-left: 5px;
+}
+
+.submit-update {
+height: 35px;
+width: 100px;
+margin: 5px auto 0 auto;
+border-style: none;
+border-radius: 10px;
+background-color: blue;
+color: white;
+}
