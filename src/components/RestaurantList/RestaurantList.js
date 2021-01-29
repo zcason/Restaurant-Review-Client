@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import StarRating from '../../components/StarRating/StarRating';
 import RestaurantReviewApiService from '../../services/restaurant-review-api-services';
 import './RestaurantList.css';
 
@@ -8,6 +9,17 @@ class RestaurantList extends Component {
         history: {
             push: () => { },
         },
+    }
+    renderRating = (restaurant) => {
+        if (!restaurant.count) {
+            return <span>0 reviews</span>
+        }
+        return (
+            <>
+                <StarRating rating={restaurant.average_rating} />
+                <span className={'review-count'}>({restaurant.count})</span>
+            </>
+        );
     }
 
     handleDelete = (event, id) => {
@@ -27,6 +39,7 @@ class RestaurantList extends Component {
         const { history } = this.props;
         history.push(`/restaurants/${id}`)
     }
+
 
     render() {
         return (
@@ -52,7 +65,7 @@ class RestaurantList extends Component {
                             <td>{restaurant.name}</td>
                             <td>{restaurant.location}</td>
                             <td>{"$".repeat(restaurant.price_range)}</td>
-                            <td>5</td>
+                            <td>{this.renderRating(restaurant)}</td>
                             <td>
                                 <button
                                     className="update"

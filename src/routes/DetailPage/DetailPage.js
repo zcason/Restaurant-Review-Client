@@ -9,7 +9,7 @@ import './DetailPage.css';
 class DetailPage extends Component {
     state = {
         id: this.props.match.params.id,
-        restaurantName: {},
+        restaurant: {},
         reviews: [],
         hasResults: false
     }
@@ -19,7 +19,7 @@ class DetailPage extends Component {
         RestaurantReviewApiService.getRestaurantById(id)
             .then(res => {
                 this.setState({
-                    restaurantName: res[0].name,
+                    restaurant: res[0],
                     reviews: res[1],
                     hasResults: true
                 });
@@ -30,12 +30,16 @@ class DetailPage extends Component {
         this.setState({ reviews: [...this.state.reviews, apiResponse] });
     }
     render() {
+        const { restaurant } = this.state;
         return (
             <div>
                 <Header />
-                {this.state.hasResults && <h2 className={'restaurant-header'}>
-                    {this.state.restaurantName}
-                </h2>}
+                {this.state.hasResults &&
+                    <h2 className={'restaurant-header'}>
+                        {restaurant.name}
+                    </h2>
+                }
+
                 <div className={'align-form'}>
                     <ReviewForm
                         SetState={this.addReviewSetState}

@@ -41,9 +41,13 @@ body {
     border-bottom: 1px solid grey;
     color: white;
   }
+
+  .review-count {
+    color: #fecb2e;
+  }
   
   .update {
-      background-color: #F5ED0A;
+      background-color: #fecb2e;
       font-weight: 600;
       border-style: none;
       border-radius: 5px;
