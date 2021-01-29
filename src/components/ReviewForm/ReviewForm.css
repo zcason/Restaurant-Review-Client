@@ -1,25 +1,30 @@
-.update-header {
-    text-align: center;
-    margin-top: 30px;
-    font-weight: 300;
-}
-
-.update-form {
+.review-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 50px;
 }
 
-.update-form label {
+.review-form label {
     margin-left: 25%;
 }
 
-.update-form .form-control {
+.review-form .form-control {
     margin-top: 4px;
     margin-bottom: 15px;
     margin: 4px auto 15px auto;
     height: 30px;
+    width: 50%;
+    border-radius: 8px;
+    border-width: thin;
+    padding-left: 5px;
+}
+
+
+.review-text-area {
+    margin-top: 4px;
+    margin-bottom: 15px;
+    margin: 4px auto 15px auto;
+    height: 75px;
     width: 50%;
     border-radius: 8px;
     border-width: thin;

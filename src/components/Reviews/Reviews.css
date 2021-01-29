@@ -1,0 +1,41 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+
+}
+
+.review-card {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #147efb;
+    color: white;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
+
+.review-card .rating {
+    margin-bottom: 25px;
+}
+
+.review-body {
+    white-space: normal;
+}
+
+@media screen and (min-width: 750px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 30%));
+        grid-gap: 20px;
+        align-items: center;
+        margin-left: 5%;
+      }
+
+    .review-body {
+        padding: 0 10px;
+    }
+ }
