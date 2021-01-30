@@ -34,12 +34,11 @@ You can access a working prototype of the React app here: https://restaurant-rev
 Cover Page
 :-------------------------:
 ![Cover Page](/screenshots/Cover-Page.png)
-Login Page
-Home Page
+Restaurants Page
 ![Restaurants Page](/screenshots/Restaurants-Page.png)
-Proflie Page
-![Deatails Page](/screenshots/Details-Page.png)
-Event Page
+Details Page
+![Details Page](/screenshots/Details-Page.png)
+Update Page
 ![Update Page](/screenshots/Update-Page.png) 
 
 
