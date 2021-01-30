@@ -7,7 +7,6 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import './App.css';
 
 class App extends Component {
-  state = {}
   render() {
     return (
       <main>

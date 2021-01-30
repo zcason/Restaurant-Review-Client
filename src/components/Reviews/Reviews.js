@@ -4,7 +4,6 @@ import './Reviews.css';
 
 
 class Reviews extends Component {
-    state = {}
     render() {
         const reviewList = this.props.reviews.map(review => {
             return <div key={review.id} className={'review-card'}>
