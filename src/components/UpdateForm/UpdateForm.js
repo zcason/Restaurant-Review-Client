@@ -44,7 +44,7 @@ class UpdateForm extends Component {
         RestaurantReviewApiService.updateRestaurantById(id, { name, location, price_range })
             .then(res => {
                 const { history } = this.props;
-                history.push('/')
+                history.push('/restaurants')
             })
     }
 

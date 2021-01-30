@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <Link
                 className={'header-link'}
-                to={'/'}>
+                to={'/restaurants'}>
                 <h1>Restaurant Review</h1>
             </Link>
         );

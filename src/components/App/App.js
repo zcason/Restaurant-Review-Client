@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import CoverPage from '../../routes/CoverPage/CoverPage';
 import HomePage from '../../routes/HomePage/HomePage';
 import DetailPage from '../../routes/DetailPage/DetailPage';
 import UpdatePage from '../../routes/UpdatePage/UpdatePage';
@@ -16,6 +17,11 @@ class App extends Component {
               <Route
                 exact
                 path={'/'}
+                component={CoverPage}
+              />
+              <Route
+                exact
+                path={'/restaurants'}
                 component={HomePage}
               />
               <Route
