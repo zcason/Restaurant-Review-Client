@@ -30,7 +30,6 @@ class DetailPage extends Component {
         this.setState({ reviews: [...this.state.reviews, apiResponse] });
     }
     render() {
-        console.log(this.state.reviews)
         const { restaurant } = this.state;
         return (
             <div>
