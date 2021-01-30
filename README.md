@@ -61,7 +61,8 @@ API Documentation details:
 * POST Review
     * `https://still-forest-75414.herokuapp.com/api/:restaurantId`
         * JSON body
-        *   { "name": "Zuri", "content": "Incredible Service", "rating": 5, "restaurant_id": 1}
+        *   { "name": "Zuri", "content": "Incredible Service", "rating": 5, "restaurant_id": 1
+        }
 
 * PUT Restaurant
     * `https://still-forest-75414.herokuapp.com/api/:restaurantId`
